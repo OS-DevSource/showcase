@@ -6,7 +6,7 @@ const Badge = React.forwardRef<HTMLSpanElement, React.HTMLAttributes<HTMLSpanEle
     <span
       ref={ref}
       className={cn(
-        "border-border bg-card text-muted inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold tracking-wide uppercase",
+        "border-border bg-card text-muted-foreground inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold tracking-wide uppercase",
         className
       )}
       {...props}

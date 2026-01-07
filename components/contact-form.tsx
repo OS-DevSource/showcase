@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -22,6 +22,7 @@ type FormStatus = "idle" | "loading" | "success" | "error";
 type FormErrors = Partial<Record<keyof ContactPayload, string>>;
 
 export function ContactForm() {
+  const reduceMotion = useReducedMotion();
   const [formState, setFormState] = useState<ContactPayload>(initialState);
   const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<FormStatus>("idle");
@@ -206,7 +207,7 @@ export function ContactForm() {
         <Button type="submit" size="lg" disabled={status === "loading"}>
           {status === "loading" ? "Sending..." : "Send request"}
         </Button>
-        <p className="text-muted text-xs">We reply within 2 business days.</p>
+        <p className="text-muted-foreground text-xs">We reply within 2 business days.</p>
       </div>
       {errors.website && (
         <p className="text-xs text-red-500" role="alert">
@@ -215,7 +216,7 @@ export function ContactForm() {
       )}
       {toast && (
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           className={`rounded-[var(--radius-sm)] border px-4 py-3 text-sm ${
             toast.type === "success"

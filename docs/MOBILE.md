@@ -1,5 +1,15 @@
 # Mobile excellence checklist
 
+## 2026-01-07 update
+
+- Changes impacting mobile: primary button tokens, sticky offset + stacking, reveal thresholds, slider handle touch-action.
+- Manual re-check: not run in this environment (requires local browser).
+
+## 2026-01-07 hardening pass
+
+- Added section isolation and decorative layer pointer-events for safer stacking on mobile.
+- Manual re-check after hardening: not run in this environment (requires local browser).
+
 Viewports tested
 
 - [x] 360x800

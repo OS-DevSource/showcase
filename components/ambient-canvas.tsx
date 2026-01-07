@@ -59,5 +59,11 @@ export function AmbientCanvas() {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="absolute inset-0 opacity-70" aria-hidden="true" />;
+  return (
+    <canvas
+      ref={canvasRef}
+      className="pointer-events-none absolute inset-0 -z-10 opacity-70"
+      aria-hidden="true"
+    />
+  );
 }

@@ -25,7 +25,7 @@ export function ProofSection() {
               <h2 className="text-3xl font-[var(--font-display)] font-semibold md:text-4xl">
                 {siteConfig.proof.title}
               </h2>
-              <p className="text-muted mt-3 text-base">{siteConfig.proof.description}</p>
+              <p className="text-muted-foreground mt-3 text-base">{siteConfig.proof.description}</p>
             </div>
             <div className="grid gap-3">
               {siteConfig.proof.metrics.map((metric) => (
@@ -33,7 +33,7 @@ export function ProofSection() {
                   key={metric.value}
                   className="border-border bg-card flex items-center justify-between rounded-[var(--radius-sm)] border px-4 py-3"
                 >
-                  <span className="text-muted text-xs font-semibold tracking-wide uppercase">
+                  <span className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
                     {metric.label}
                   </span>
                   <span className="text-foreground text-sm font-semibold">{metric.value}</span>
@@ -50,9 +50,9 @@ export function ProofSection() {
                     <Card className="border-border/80 bg-card/90 h-full rounded-[var(--radius-md)]">
                       <CardHeader>
                         <CardTitle>{study.title}</CardTitle>
-                        <p className="text-muted text-sm">Problem: {study.problem}</p>
+                        <p className="text-muted-foreground text-sm">Problem: {study.problem}</p>
                       </CardHeader>
-                      <CardContent className="text-muted space-y-3 text-sm">
+                      <CardContent className="text-muted-foreground space-y-3 text-sm">
                         <p>Fix: {study.fix}</p>
                         <p className="text-foreground font-semibold">{study.result}</p>
                       </CardContent>

@@ -95,7 +95,7 @@ export function BeforeAfterSlider({ beforeSrc, afterSrc, className }: BeforeAfte
         onPointerUp={onPointerUp}
         onPointerCancel={onPointerUp}
         onKeyDown={onKeyDown}
-        className="focus-ring border-border bg-card absolute top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border shadow-[var(--shadow-soft)]"
+        className="focus-ring border-border bg-card absolute top-1/2 flex h-12 w-12 -translate-y-1/2 touch-none items-center justify-center rounded-full border shadow-[var(--shadow-soft)]"
         style={{ left: `calc(${percent}% - 24px)` }}
       >
         <span className="sr-only">Drag handle</span>

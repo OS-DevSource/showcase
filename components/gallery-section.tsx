@@ -31,14 +31,14 @@ function GalleryTile({ title, description }: { title: string; description: strin
         <div
           id={contentId}
           className={cn(
-            "text-muted mt-2 text-sm transition-opacity",
+            "text-muted-foreground mt-2 text-sm transition-opacity",
             expanded ? "opacity-100" : isTouch ? "opacity-0" : "opacity-0 group-hover:opacity-100"
           )}
         >
           {description}
         </div>
       </div>
-      <span className="text-muted relative z-10 mt-6 text-xs font-semibold tracking-wide uppercase">
+      <span className="text-muted-foreground relative z-10 mt-6 text-xs font-semibold tracking-wide uppercase">
         {hint}
       </span>
       <div className="absolute inset-0 opacity-0 transition group-hover:opacity-100">
@@ -57,7 +57,7 @@ export function GallerySection() {
           <h2 className="text-3xl font-[var(--font-display)] font-semibold md:text-4xl">
             {siteConfig.gallery.title}
           </h2>
-          <p className="text-muted max-w-2xl">{siteConfig.gallery.description}</p>
+          <p className="text-muted-foreground max-w-2xl">{siteConfig.gallery.description}</p>
         </div>
         <Reveal className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {siteConfig.gallery.items.map((item) => (

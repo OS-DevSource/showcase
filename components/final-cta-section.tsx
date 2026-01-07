@@ -13,14 +13,14 @@ export function FinalCtaSection() {
             <h2 className="text-3xl font-[var(--font-display)] font-semibold md:text-4xl">
               {siteConfig.finalCta.title}
             </h2>
-            <p className="text-muted mt-3">{siteConfig.finalCta.description}</p>
+            <p className="text-muted-foreground mt-3">{siteConfig.finalCta.description}</p>
           </div>
           <Button asChild size="lg" className="w-fit">
             <a href={siteConfig.ctaPrimaryHref} target="_blank" rel="noreferrer">
               {siteConfig.ctaPrimaryLabel}
             </a>
           </Button>
-          <p className="text-muted text-xs">Prefer email? Reach us at {siteConfig.contactEmail}</p>
+          <p className="text-muted-foreground text-xs">Prefer email? Reach us at {siteConfig.contactEmail}</p>
         </div>
         <div className="border-border bg-card rounded-[var(--radius-md)] border p-6">
           <ContactForm />

@@ -22,7 +22,7 @@ export function DeliverablesSection() {
                 <CardHeader>
                   <CardTitle>{item.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="text-muted text-sm">{item.description}</CardContent>
+                <CardContent className="text-muted-foreground text-sm">{item.description}</CardContent>
               </Card>
             </RevealItem>
           ))}

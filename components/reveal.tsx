@@ -13,7 +13,7 @@ export function Reveal({ className, children }: { className?: string; children: 
       variants={reduceMotion ? undefined : staggerContainer}
       initial={reduceMotion ? false : "hidden"}
       whileInView={reduceMotion ? undefined : "visible"}
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={reduceMotion ? undefined : { once: true, amount: 0.25 }}
     >
       {children}
     </motion.div>
@@ -35,6 +35,7 @@ export function RevealItem({
       variants={reduceMotion ? undefined : fadeUp}
       initial={reduceMotion ? false : "hidden"}
       whileInView={reduceMotion ? undefined : "visible"}
+      viewport={reduceMotion ? undefined : { once: true, amount: 0.25 }}
     >
       {children}
     </motion.div>

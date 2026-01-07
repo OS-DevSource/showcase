@@ -17,12 +17,18 @@ export function ProcessSection() {
         <Reveal className="mt-10 grid gap-4 md:grid-cols-2">
           {siteConfig.process.steps.map((step, index) => (
             <RevealItem key={step.title}>
-              <div className="gradient-border bg-card h-full rounded-[var(--radius-md)] p-6">
-                <p className="text-muted text-xs font-semibold tracking-wide uppercase">
-                  Step {index + 1}
-                </p>
-                <h3 className="text-foreground mt-2 text-lg font-semibold">{step.title}</h3>
-                <p className="text-muted mt-2 text-sm">{step.description}</p>
+              <div className="relative isolate h-full overflow-hidden rounded-[var(--radius-md)]">
+                <div
+                  aria-hidden="true"
+                  className="gradient-border pointer-events-none absolute inset-0 rounded-[var(--radius-md)]"
+                />
+                <div className="relative z-10 m-px h-full rounded-[var(--radius-md)] bg-card p-6">
+                  <p className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
+                    Step {index + 1}
+                  </p>
+                  <h3 className="text-foreground mt-2 text-lg font-semibold">{step.title}</h3>
+                  <p className="text-muted-foreground mt-2 text-sm">{step.description}</p>
+                </div>
               </div>
             </RevealItem>
           ))}

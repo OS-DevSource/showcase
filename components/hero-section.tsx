@@ -31,8 +31,8 @@ export function HeroSection() {
   useCursorGlow(!reduceMotion && !isTouch);
 
   return (
-    <section className="relative overflow-hidden">
-      <div className="glow-field absolute inset-0">
+    <section className="relative isolate overflow-hidden">
+      <div className="glow-field pointer-events-none absolute inset-0 -z-10">
         <div className="blob blob-one" />
         <div className="blob blob-two" />
         {showCanvas && !reduceMotion && <AmbientCanvas />}
@@ -71,7 +71,7 @@ export function HeroSection() {
             initial={reduceMotion ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-            className="text-muted max-w-2xl text-lg md:text-xl"
+            className="text-muted-foreground max-w-2xl text-lg md:text-xl"
           >
             {siteConfig.hero.subhead}
           </motion.p>

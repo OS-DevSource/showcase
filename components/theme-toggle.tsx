@@ -20,7 +20,7 @@ export function ThemeToggle({ className }: { className?: string }) {
     setMounted(true);
   }, []);
 
-  const current = theme ?? "system";
+  const current = mounted ? theme ?? "system" : "system";
 
   return (
     <div
@@ -47,7 +47,7 @@ export function ThemeToggle({ className }: { className?: string }) {
               "focus-ring h-8 rounded-full px-3 transition",
               selected
                 ? "bg-foreground text-background shadow-[var(--shadow-soft)]"
-                : "text-muted hover:text-foreground"
+                : "text-muted-foreground hover:text-foreground"
             )}
           >
             {option.label}
