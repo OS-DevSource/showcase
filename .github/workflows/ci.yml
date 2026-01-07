@@ -10,22 +10,43 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "pnpm"
+
+      # NOTE: actions/setup-node's built-in pnpm caching can fail if pnpm is not
+      # available yet. We enable pnpm first, then cache the pnpm store manually.
       - name: Enable pnpm
         run: |
           corepack enable
           corepack prepare pnpm@9.15.1 --activate
+          pnpm --version
+
+      - name: Get pnpm store path
+        id: pnpm-cache
+        run: echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Cache pnpm store
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
+
       - name: Lint
         run: pnpm lint
+
       - name: Typecheck
         run: pnpm typecheck
+
       - name: Test
         run: pnpm test
+
       - name: Build
         run: pnpm build
