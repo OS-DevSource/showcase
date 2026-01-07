@@ -1,0 +1,27 @@
+import { DeliverablesSection } from "@/components/deliverables-section";
+import { FaqSection } from "@/components/faq-section";
+import { FinalCtaSection } from "@/components/final-cta-section";
+import { GallerySection } from "@/components/gallery-section";
+import { HeroSection } from "@/components/hero-section";
+import { ProcessSection } from "@/components/process-section";
+import { ProofSection } from "@/components/proof-section";
+import { SiteFooter } from "@/components/site-footer";
+import { TopNav } from "@/components/top-nav";
+
+export default function Home() {
+  return (
+    <div className="bg-background text-foreground min-h-screen">
+      <TopNav />
+      <main>
+        <HeroSection />
+        <ProofSection />
+        <GallerySection />
+        <ProcessSection />
+        <DeliverablesSection />
+        <FaqSection />
+        <FinalCtaSection />
+      </main>
+      <SiteFooter />
+    </div>
+  );
+}
