@@ -22,7 +22,7 @@ export function ProcessSection() {
                   aria-hidden="true"
                   className="gradient-border pointer-events-none absolute inset-0 rounded-[var(--radius-md)]"
                 />
-                <div className="relative z-10 m-px h-full rounded-[var(--radius-md)] bg-card p-6">
+                <div className="bg-card relative z-10 m-px h-full rounded-[var(--radius-md)] p-6">
                   <p className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
                     Step {index + 1}
                   </p>

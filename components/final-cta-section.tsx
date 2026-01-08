@@ -20,7 +20,9 @@ export function FinalCtaSection() {
               {siteConfig.ctaPrimaryLabel}
             </a>
           </Button>
-          <p className="text-muted-foreground text-xs">Prefer email? Reach us at {siteConfig.contactEmail}</p>
+          <p className="text-muted-foreground text-xs">
+            Prefer email? Reach us at {siteConfig.contactEmail}
+          </p>
         </div>
         <div className="border-border bg-card rounded-[var(--radius-md)] border p-6">
           <ContactForm />

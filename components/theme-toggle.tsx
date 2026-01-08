@@ -20,7 +20,7 @@ export function ThemeToggle({ className }: { className?: string }) {
     setMounted(true);
   }, []);
 
-  const current = mounted ? theme ?? "system" : "system";
+  const current = mounted ? (theme ?? "system") : "system";
 
   return (
     <div
