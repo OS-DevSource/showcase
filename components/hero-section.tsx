@@ -6,6 +6,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { MOTION_DELAY, MOTION_DURATION, MOTION_DURATION_LONG, MOTION_EASE } from "@/lib/motion";
 import { siteConfig } from "@/lib/site-config";
 import { useCursorGlow } from "@/lib/cursor-glow";
 import { useTouchDevice } from "@/lib/use-touch-device";
@@ -37,7 +38,7 @@ export function HeroSection() {
         <div className="blob blob-two" />
         {showCanvas && !reduceMotion && <AmbientCanvas />}
         <div className="noise-layer absolute inset-0" />
-        <div className="vignette-layer absolute inset-0" />
+        <div className="vignette-layer absolute inset-0 hidden dark:block" />
       </div>
       <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-6 pt-28 pb-20 md:pt-32 md:pb-24">
         <Badge className="border-foreground/10 text-foreground/70 w-fit">
@@ -49,7 +50,7 @@ export function HeroSection() {
               <motion.span
                 initial={reduceMotion ? false : { y: 120 }}
                 animate={{ y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
+                transition={{ duration: MOTION_DURATION_LONG, ease: MOTION_EASE }}
                 className="inline-block"
               >
                 {siteConfig.hero.headlineLines[0]}
@@ -59,7 +60,11 @@ export function HeroSection() {
               <motion.span
                 initial={reduceMotion ? false : { y: 120 }}
                 animate={{ y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.08 }}
+                transition={{
+                  duration: MOTION_DURATION_LONG,
+                  ease: MOTION_EASE,
+                  delay: MOTION_DELAY,
+                }}
                 className="relative inline-block"
               >
                 {siteConfig.hero.headlineLines[1]}
@@ -70,7 +75,7 @@ export function HeroSection() {
           <motion.p
             initial={reduceMotion ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            transition={{ duration: MOTION_DURATION, ease: MOTION_EASE, delay: 0.18 }}
             className="text-muted-foreground max-w-2xl text-lg md:text-xl"
           >
             {siteConfig.hero.subhead}

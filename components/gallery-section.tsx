@@ -22,7 +22,8 @@ function GalleryTile({ title, description }: { title: string; description: strin
       onClick={() => setOpen((value) => !value)}
       className={cn(
         "focus-ring group border-border bg-card relative flex h-44 w-full flex-col justify-between overflow-hidden rounded-[var(--radius-md)] border p-5 text-left transition",
-        "hover:-translate-y-1 hover:shadow-[var(--shadow-soft)]"
+        "hover:-translate-y-1 hover:border-accent/35 hover:shadow-[0_18px_50px_rgba(12,14,24,0.12)]",
+        "dark:hover:border-border/80 dark:hover:shadow-[var(--shadow-soft)]"
       )}
       data-open={expanded}
     >
@@ -42,7 +43,7 @@ function GalleryTile({ title, description }: { title: string; description: strin
         {hint}
       </span>
       <div className="absolute inset-0 opacity-0 transition group-hover:opacity-100">
-        <div className="absolute inset-0 bg-gradient-to-br from-[rgba(74,88,255,0.12)] via-transparent to-[rgba(255,110,72,0.18)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(120%_120%_at_20%_0%,rgb(var(--accent)_/_0.18)_0%,transparent_65%)] dark:bg-gradient-to-br dark:from-[rgba(74,88,255,0.12)] dark:via-transparent dark:to-[rgba(255,110,72,0.18)]" />
       </div>
     </button>
   );
@@ -51,7 +52,8 @@ function GalleryTile({ title, description }: { title: string; description: strin
 export function GallerySection() {
   return (
     <section className="section-padding" id="gallery">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="pointer-events-none absolute inset-0 z-0 bg-background" aria-hidden="true" />
+      <div className="relative z-10 mx-auto max-w-6xl px-6">
         <div className="flex flex-col gap-4">
           <Badge className="w-fit">Gallery</Badge>
           <h2 className="text-3xl font-[var(--font-display)] font-semibold md:text-4xl">

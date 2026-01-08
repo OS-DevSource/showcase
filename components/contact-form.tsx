@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { contactSchema, type ContactPayload } from "@/lib/contact-schema";
+import { MOTION_DURATION, MOTION_EASE } from "@/lib/motion";
 
 const initialState: ContactPayload = {
   name: "",
@@ -160,13 +161,23 @@ export function ContactForm() {
             onChange={(event) => updateField("budget", event.target.value)}
             aria-invalid={Boolean(errors.budget)}
             aria-describedby={errors.budget ? "budget-error" : undefined}
-            className="focus-ring border-border text-foreground h-12 w-full rounded-[var(--radius-sm)] border bg-transparent px-4 text-sm"
+            className="focus-ring border-border bg-popover text-popover-foreground h-12 w-full rounded-[var(--radius-sm)] border px-4 text-sm"
           >
-            <option value="">Select a range</option>
-            <option value="5k-10k">5k to 10k</option>
-            <option value="10k-20k">10k to 20k</option>
-            <option value="20k-40k">20k to 40k</option>
-            <option value="40k+">40k+</option>
+            <option value="" className="bg-popover text-popover-foreground">
+              Select a range
+            </option>
+            <option value="5k-10k" className="bg-popover text-popover-foreground">
+              5k to 10k
+            </option>
+            <option value="10k-20k" className="bg-popover text-popover-foreground">
+              10k to 20k
+            </option>
+            <option value="20k-40k" className="bg-popover text-popover-foreground">
+              20k to 40k
+            </option>
+            <option value="40k+" className="bg-popover text-popover-foreground">
+              40k+
+            </option>
           </select>
           {errors.budget && (
             <p id="budget-error" className="text-xs text-red-500" role="alert">
@@ -218,6 +229,7 @@ export function ContactForm() {
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: MOTION_DURATION, ease: MOTION_EASE }}
           className={`rounded-[var(--radius-sm)] border px-4 py-3 text-sm ${
             toast.type === "success"
               ? "border-emerald-400/30 bg-emerald-400/10 text-emerald-500"

@@ -79,7 +79,7 @@ export function BeforeAfterSlider({ beforeSrc, afterSrc, className }: BeforeAfte
         className="pointer-events-none absolute inset-0 flex items-center"
         style={{ left: `${percent}%` }}
       >
-        <div className="h-full w-px bg-white/60" />
+        <div className="h-full w-px bg-foreground/50" />
       </div>
       <button
         type="button"
@@ -103,10 +103,10 @@ export function BeforeAfterSlider({ beforeSrc, afterSrc, className }: BeforeAfte
           <span className="text-xs font-semibold">|||</span>
         </div>
       </button>
-      <div className="absolute top-4 left-4 rounded-full bg-black/60 px-3 py-1 text-xs font-semibold tracking-wide text-white uppercase">
+      <div className="absolute top-4 left-4 rounded-full bg-foreground/70 px-3 py-1 text-xs font-semibold tracking-wide text-background uppercase">
         Before
       </div>
-      <div className="absolute top-4 right-4 rounded-full bg-black/60 px-3 py-1 text-xs font-semibold tracking-wide text-white uppercase">
+      <div className="absolute top-4 right-4 rounded-full bg-foreground/70 px-3 py-1 text-xs font-semibold tracking-wide text-background uppercase">
         After
       </div>
     </div>

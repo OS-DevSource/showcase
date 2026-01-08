@@ -17,7 +17,7 @@ export function ProcessSection() {
         <Reveal className="mt-10 grid gap-4 md:grid-cols-2">
           {siteConfig.process.steps.map((step, index) => (
             <RevealItem key={step.title}>
-              <div className="relative isolate h-full overflow-hidden rounded-[var(--radius-md)]">
+              <div className="group relative isolate h-full overflow-hidden rounded-[var(--radius-md)]">
                 <div
                   aria-hidden="true"
                   className="gradient-border pointer-events-none absolute inset-0 rounded-[var(--radius-md)]"

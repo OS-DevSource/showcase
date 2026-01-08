@@ -98,3 +98,25 @@ Verification
 - pnpm test: passed (11 tests)
 - pnpm build: passed
 - Manual dev verification (ring alignment, no jarring restarts, stacking): not run in this environment
+
+## 2026-01-08 light-mode polish + motion consistency
+
+Root causes
+
+- Light mode palette was too bright and lacked ambient depth.
+- Reveal motion used mixed easing/duration, and observers could leave content hidden in edge cases.
+- Gradient borders ran continuously, adding motion fatigue in calmer sections.
+
+Fix summary
+
+- Warmed light tokens, softened glow intensity, and added a global light-only ambient wash with subtle noise.
+- Centralized motion easing/durations, aligned hero and toast transitions, and added an IO fallback path for reveals.
+- Paused gradient border shimmer by default and only animate on hover; added section dividers for clearer pacing.
+
+Verification
+
+- pnpm lint: passed
+- pnpm typecheck: passed
+- pnpm test: passed (11 tests)
+- pnpm build: passed
+- pnpm dev: started (server ready); manual checks not run in this environment

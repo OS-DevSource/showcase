@@ -1,5 +1,10 @@
 # Mobile excellence checklist
 
+## 2026-01-08 polish pass
+
+- Changes impacting mobile: light theme tokens, ambient wash layer, hover-only border shimmer, motion easing alignment.
+- Manual re-check: not run in this environment (requires local browser).
+
 ## 2026-01-07 update
 
 - Changes impacting mobile: primary button tokens, sticky offset + stacking, reveal thresholds, slider handle touch-action.
