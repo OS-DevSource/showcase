@@ -17,7 +17,7 @@ export function ProofSection() {
 
   return (
     <section id="proof" className="section-padding">
-      <div className="pointer-events-none absolute inset-0 z-0 bg-background" aria-hidden="true" />
+      <div className="bg-background pointer-events-none absolute inset-0 z-0" aria-hidden="true" />
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         <div className="grid gap-10 lg:grid-cols-[0.9fr,1.1fr] lg:items-start">
           <div className={cn("flex flex-col gap-6", stickyEnabled ? "sticky-shell" : "")}>

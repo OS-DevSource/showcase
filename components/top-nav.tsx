@@ -9,7 +9,7 @@ export function TopNav() {
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
         <Link
           href="#"
-          className="focus-ring text-foreground text-lg font-semibold transition-colors hover:text-foreground/80"
+          className="focus-ring text-foreground hover:text-foreground/80 text-lg font-semibold transition-colors"
         >
           {siteConfig.brandName}
         </Link>

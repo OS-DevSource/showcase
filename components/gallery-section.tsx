@@ -22,7 +22,7 @@ function GalleryTile({ title, description }: { title: string; description: strin
       onClick={() => setOpen((value) => !value)}
       className={cn(
         "focus-ring group border-border bg-card relative flex h-44 w-full flex-col justify-between overflow-hidden rounded-[var(--radius-md)] border p-5 text-left transition",
-        "hover:-translate-y-1 hover:border-accent/35 hover:shadow-[0_18px_50px_rgba(12,14,24,0.12)]",
+        "hover:border-accent/35 hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(12,14,24,0.12)]",
         "dark:hover:border-border/80 dark:hover:shadow-[var(--shadow-soft)]"
       )}
       data-open={expanded}
@@ -52,7 +52,7 @@ function GalleryTile({ title, description }: { title: string; description: strin
 export function GallerySection() {
   return (
     <section className="section-padding" id="gallery">
-      <div className="pointer-events-none absolute inset-0 z-0 bg-background" aria-hidden="true" />
+      <div className="bg-background pointer-events-none absolute inset-0 z-0" aria-hidden="true" />
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         <div className="flex flex-col gap-4">
           <Badge className="w-fit">Gallery</Badge>
