@@ -22,11 +22,11 @@ export const siteConfig = {
   proof: {
     title: "Proof of polish, not promises",
     description:
-      "Slide the before and after to see how strategic redesign turns clutter into clarity. Example metrics below are illustrative.",
+      "Slide the before and after to see how strategic redesign turns clutter into clarity. Sample outcomes below are modeled examples. Results vary by baseline and traffic.",
     metrics: [
-      { label: "Example outcome", value: "+42% qualified leads" },
-      { label: "Example outcome", value: "-36% bounce rate" },
-      { label: "Example outcome", value: "+58% call requests" },
+      { label: "Sample outcome", value: "+42% qualified leads" },
+      { label: "Sample outcome", value: "-36% bounce rate" },
+      { label: "Sample outcome", value: "+58% call requests" },
     ],
   },
   gallery: {
@@ -36,27 +36,33 @@ export const siteConfig = {
     items: [
       {
         title: "Home Services",
-        description: "Fast quotes, trusted teams, clear next steps.",
+        description:
+          "Problem: Prospects were unsure who to call or what was included.\nDeliverables:\n- Service scope blocks\n- Review highlights and trust badges\nOutcome: Modeled example: +25% quote form starts.",
       },
       {
         title: "Dental and Health",
-        description: "Calm visuals, credibility, simple booking flows.",
+        description:
+          "Problem: Patients hesitated before booking online.\nDeliverables:\n- Staff and facility trust panel\n- Simplified booking steps\nOutcome: Modeled example: +18% booking starts.",
       },
       {
         title: "Solar and Energy",
-        description: "Confidence, savings proof, frictionless consults.",
+        description:
+          "Problem: Savings story felt unclear and consults stalled.\nDeliverables:\n- Savings comparison layout\n- Eligibility checklist\nOutcome: Target outcome: more qualified consult requests.",
       },
       {
         title: "Legal",
-        description: "Authority led pages with direct case intake.",
+        description:
+          "Problem: Visitors did not see a clear path to intake.\nDeliverables:\n- Practice area prioritization\n- Intake form rewrite\nOutcome: Modeled example: +20% intake form starts.",
       },
       {
         title: "Construction",
-        description: "Portfolio first, precise service scoping.",
+        description:
+          "Problem: Portfolio was buried and scope felt vague.\nDeliverables:\n- Project gallery refresh\n- Scope and timeline blocks\nOutcome: Target outcome: more bid-ready inquiries.",
       },
       {
         title: "Professional Services",
-        description: "High trust messaging with conversion ready CTAs.",
+        description:
+          "Problem: Messaging felt generic and trust was thin.\nDeliverables:\n- Positioning headline set\n- Proof points and logos\nOutcome: Modeled example: +16% consultation requests.",
       },
     ],
   },
@@ -107,19 +113,19 @@ export const siteConfig = {
       title: "Local HVAC",
       problem: "Site felt outdated and buried key services.",
       fix: "Simplified navigation and added intent focused CTAs.",
-      result: "Example outcome: +31% quote requests in 45 days.",
+      result: "Modeled example: +31% quote requests in 6 weeks.",
     },
     {
       title: "Family Dentistry",
       problem: "Visitors dropped before booking online.",
       fix: "Rebuilt trust signals and cleaned up the booking flow.",
-      result: "Example outcome: +22% booking starts in 30 days.",
+      result: "Modeled example: +22% booking starts in 4 weeks.",
     },
     {
       title: "Solar Installer",
       problem: "Confusing offers and low consult form starts.",
       fix: "Clarified savings messaging with visual proof points.",
-      result: "Example outcome: +28% consult submissions.",
+      result: "Modeled example: +28% consult submissions after launch.",
     },
   ],
   faq: {

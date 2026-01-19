@@ -32,7 +32,7 @@ function GalleryTile({ title, description }: { title: string; description: strin
         <div
           id={contentId}
           className={cn(
-            "text-muted-foreground mt-2 text-sm transition-opacity",
+            "text-muted-foreground mt-2 text-sm whitespace-pre-line transition-opacity",
             expanded ? "opacity-100" : isTouch ? "opacity-0" : "opacity-0 group-hover:opacity-100"
           )}
         >
