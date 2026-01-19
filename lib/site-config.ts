@@ -4,10 +4,10 @@ export const siteConfig = {
   siteDescription:
     "Premium redesigns for service businesses. Fast, focused, and conversion ready without the agency bloat.",
   ctaPrimaryLabel: "Book a strategy call",
-  ctaPrimaryHref: "https://example.com/book",
+  ctaPrimaryHref: "https://calendly.com/os-devsource/15min",
   ctaSecondaryLabel: "See the proof",
   ctaSecondaryHref: "#proof",
-  contactEmail: "hello@scaleview.studio",
+  contactEmail: "os.devsource@gmail.com",
   splashPalette: ["#4a58ff", "#ff6e48", "#5ad7ff"],
   nav: {
     ctaLabel: "Start a project",

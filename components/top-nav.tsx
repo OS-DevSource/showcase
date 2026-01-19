@@ -8,7 +8,7 @@ export function TopNav() {
     <nav className="border-border/60 bg-background/80 sticky top-0 z-50 border-b backdrop-blur">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
         <Link
-          href="#"
+          href="/"
           className="focus-ring text-foreground hover:text-foreground/80 text-lg font-semibold transition-colors"
         >
           {siteConfig.brandName}
@@ -16,7 +16,7 @@ export function TopNav() {
         <div className="flex flex-wrap items-center gap-3">
           <ThemeToggle />
           <Button asChild size="sm">
-            <a href={siteConfig.ctaPrimaryHref} target="_blank" rel="noreferrer">
+            <a href={siteConfig.ctaPrimaryHref} target="_blank" rel="noopener noreferrer">
               {siteConfig.nav.ctaLabel}
             </a>
           </Button>

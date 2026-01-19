@@ -83,7 +83,7 @@ export function HeroSection() {
         </div>
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
           <Button size="lg" asChild>
-            <a href={siteConfig.ctaPrimaryHref} target="_blank" rel="noreferrer">
+            <a href={siteConfig.ctaPrimaryHref} target="_blank" rel="noopener noreferrer">
               {siteConfig.ctaPrimaryLabel}
             </a>
           </Button>

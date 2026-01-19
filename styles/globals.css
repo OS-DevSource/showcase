@@ -87,8 +87,15 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   min-height: 100%;
+  min-height: 100svh;
   background: rgb(var(--background));
   color: rgb(var(--foreground));
   font-family: var(--font-sans), system-ui, sans-serif;
@@ -116,6 +123,14 @@ a {
 img {
   max-width: 100%;
   height: auto;
+}
+
+select {
+  color-scheme: light;
+}
+
+.dark select {
+  color-scheme: dark;
 }
 
 select option {
