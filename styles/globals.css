@@ -28,6 +28,9 @@
   --glow-opacity: 0.45;
   --glow-x: 50%;
   --glow-y: 20%;
+  --font-button: var(--font-sans);
+  --focus-ring: rgba(74, 88, 255, 0.9);
+  --focus-ring-shadow: rgba(74, 88, 255, 0.18);
 }
 
 .dark {
@@ -52,6 +55,9 @@
   --shadow-soft: 0 18px 55px rgba(0, 0, 0, 0.45);
   --shadow-strong: 0 30px 90px rgba(0, 0, 0, 0.65);
   --glow-opacity: 0.55;
+  --font-button: var(--font-display);
+  --focus-ring: rgba(74, 88, 255, 0.9);
+  --focus-ring-shadow: rgba(74, 88, 255, 0);
 }
 
 @theme inline {
@@ -99,6 +105,10 @@ body {
   background: rgb(var(--background));
   color: rgb(var(--foreground));
   font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+button {
+  font-family: var(--font-button), var(--font-sans), system-ui, sans-serif;
 }
 
 .ambient-wash {
@@ -314,8 +324,9 @@ select option:hover {
 }
 
 .focus-ring:focus-visible {
-  outline: 2px solid rgba(74, 88, 255, 0.9);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 3px;
+  box-shadow: 0 0 0 4px var(--focus-ring-shadow);
 }
 
 .tilt-card {

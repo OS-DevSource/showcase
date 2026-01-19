@@ -28,7 +28,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       aria-label="Theme"
       aria-hidden={!mounted}
       className={cn(
-        "focus-ring border-border bg-card inline-flex h-10 items-center rounded-full border p-1 text-xs font-semibold",
+        "focus-ring border-border bg-card font-[var(--font-button)] inline-flex h-10 items-center rounded-full border p-1 text-xs font-semibold",
         mounted ? "opacity-100" : "pointer-events-none opacity-0",
         className
       )}
@@ -47,7 +47,7 @@ export function ThemeToggle({ className }: { className?: string }) {
               "focus-ring h-8 rounded-full px-3 transition",
               selected
                 ? "bg-foreground text-background shadow-[var(--shadow-soft)]"
-                : "text-muted-foreground hover:text-foreground"
+                : "text-muted-foreground hover:bg-muted/60 hover:text-foreground dark:hover:bg-muted/30"
             )}
           >
             {option.label}

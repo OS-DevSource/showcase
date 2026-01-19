@@ -4,15 +4,15 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "focus-ring inline-flex items-center justify-center gap-2 rounded-full text-sm font-semibold transition-all disabled:pointer-events-none disabled:opacity-50",
+  "focus-ring font-[var(--font-button)] inline-flex items-center justify-center gap-2 rounded-full text-sm font-semibold transition-all disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         primary:
           "bg-primary text-primary-foreground shadow-[var(--shadow-soft)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-strong)]",
         secondary:
-          "border border-border text-foreground hover:border-foreground/70 hover:-translate-y-0.5",
-        ghost: "text-foreground/80 hover:text-foreground",
+          "border border-border text-foreground hover:border-foreground/70 hover:-translate-y-0.5 hover:bg-muted/60 dark:hover:bg-muted/30",
+        ghost: "text-foreground/80 hover:text-foreground hover:bg-muted/60 dark:hover:bg-muted/30",
       },
       size: {
         sm: "h-10 px-4",

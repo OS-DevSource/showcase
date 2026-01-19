@@ -22,7 +22,10 @@ export function FinalCtaSection() {
           </Button>
           <p className="text-muted-foreground text-xs">
             Prefer email? Reach us at{" "}
-            <a className="text-foreground/80 hover:text-foreground" href={`mailto:${siteConfig.contactEmail}`}>
+            <a
+              className="text-foreground/80 hover:text-foreground"
+              href={`mailto:${siteConfig.contactEmail}`}
+            >
               {siteConfig.contactEmail}
             </a>
           </p>
