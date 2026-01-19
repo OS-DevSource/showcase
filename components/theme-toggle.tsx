@@ -28,7 +28,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       aria-label="Theme"
       aria-hidden={!mounted}
       className={cn(
-        "focus-ring border-border bg-card font-[var(--font-button)] inline-flex h-10 items-center rounded-full border p-1 text-xs font-semibold",
+        "focus-ring border-border bg-card inline-flex h-10 items-center rounded-full border p-1 text-xs font-[var(--font-button)] font-semibold",
         mounted ? "opacity-100" : "pointer-events-none opacity-0",
         className
       )}
