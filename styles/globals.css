@@ -298,7 +298,7 @@ select option:hover {
 }
 
 .sticky-shell {
-  position: sticky;
+  position: static;
   top: 64px;
   align-self: start;
   z-index: 0;
