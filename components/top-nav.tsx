@@ -14,7 +14,7 @@ export function TopNav() {
           >
             {siteConfig.brandName}
           </Link>
-          <div className="flex flex-wrap items-center gap-4 text-sm font-semibold text-muted-foreground">
+          <div className="text-muted-foreground flex flex-wrap items-center gap-4 text-sm font-semibold">
             {siteConfig.nav.links.map((link) => (
               <Link
                 key={link.href}

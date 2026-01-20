@@ -23,7 +23,10 @@ export function FinalCtaSection() {
           <p className="text-muted-foreground text-xs">We reply within 2 business days.</p>
           <p className="text-muted-foreground text-xs">
             Prefer email? Reach us at{" "}
-            <a className="text-primary hover:text-primary/80" href={`mailto:${siteConfig.contactEmail}`}>
+            <a
+              className="text-primary hover:text-primary/80"
+              href={`mailto:${siteConfig.contactEmail}`}
+            >
               {siteConfig.contactEmail}
             </a>
           </p>

@@ -60,7 +60,7 @@ function GalleryTile({
           expanded ? "opacity-100" : "group-hover:opacity-100"
         )}
       >
-        <div className="absolute inset-0 bg-primary/10" />
+        <div className="bg-primary/10 absolute inset-0" />
       </div>
     </button>
   );
@@ -81,11 +81,7 @@ export function GallerySection() {
         <Reveal className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {siteConfig.gallery.items.map((item) => (
             <RevealItem key={item.title}>
-              <GalleryTile
-                title={item.title}
-                description={item.description}
-                detail={item.detail}
-              />
+              <GalleryTile title={item.title} description={item.description} detail={item.detail} />
             </RevealItem>
           ))}
         </Reveal>

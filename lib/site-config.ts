@@ -158,8 +158,7 @@ export const siteConfig = {
       },
       {
         question: "Who owns the final files and code?",
-        answer:
-          "You own the deliverables we create, and we provide the source files and handoff.",
+        answer: "You own the deliverables we create, and we provide the source files and handoff.",
       },
       {
         question: "Do you offer ongoing support?",
