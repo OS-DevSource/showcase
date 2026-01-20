@@ -13,7 +13,10 @@ function GalleryTile({ title, description }: { title: string; description: strin
   const contentId = useId();
   const expanded = open;
   const hint = isTouch ? "Tap for details" : "Hover for details";
-  const lines = description.split("\n").map((line) => line.trim()).filter(Boolean);
+  const lines = description
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
   const problemLine = lines.find((line) => line.startsWith("Problem:")) ?? lines[0] ?? "";
   const deliverableLine =
     lines.find((line) => line.startsWith("- ")) ??
@@ -64,10 +67,10 @@ function GalleryTile({ title, description }: { title: string; description: strin
             className={cn(
               "text-muted-foreground absolute inset-0 text-sm whitespace-pre-line transition-all duration-300",
               expanded
-                ? "opacity-100 translate-y-0"
+                ? "translate-y-0 opacity-100"
                 : isTouch
-                  ? "opacity-0 translate-y-2"
-                  : "opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0"
+                  ? "translate-y-2 opacity-0"
+                  : "translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100"
             )}
           >
             {description}
@@ -87,7 +90,10 @@ function GalleryTile({ title, description }: { title: string; description: strin
 export function GallerySection() {
   return (
     <section className="section-padding" id="gallery">
-      <div className="section-backdrop pointer-events-none absolute inset-0 z-0" aria-hidden="true" />
+      <div
+        className="section-backdrop pointer-events-none absolute inset-0 z-0"
+        aria-hidden="true"
+      />
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         <div className="flex flex-col gap-4">
           <Badge className="w-fit">Gallery</Badge>

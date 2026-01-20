@@ -66,7 +66,7 @@ export async function POST(request: Request) {
       {
         status: 429,
         headers: { "Retry-After": String(Math.max(retryAfterSeconds, 1)) },
-      },
+      }
     );
   }
 
@@ -82,13 +82,13 @@ export async function POST(request: Request) {
     if (process.env.NODE_ENV === "production") {
       return NextResponse.json(
         { ok: false, message: "Email service not configured" },
-        { status: 500 },
+        { status: 500 }
       );
     }
     console.info("Contact form demo mode: email send skipped.");
     return NextResponse.json(
       { ok: true, demoMode: true, message: "Email service not configured" },
-      { status: 200 },
+      { status: 200 }
     );
   }
 
@@ -125,7 +125,7 @@ export async function POST(request: Request) {
     if (!contactFrom) {
       return NextResponse.json(
         { ok: false, message: "Email sender not configured" },
-        { status: 500 },
+        { status: 500 }
       );
     }
 
