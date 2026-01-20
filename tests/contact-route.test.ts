@@ -3,8 +3,6 @@ import { POST } from "@/app/api/contact/route";
 const basePayload = {
   name: "Jordan Smith",
   email: "jordan@example.com",
-  company: "Example Co",
-  budget: "10k-20k",
   message: "We need a premium redesign.",
   website: "",
 };

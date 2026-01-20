@@ -3,21 +3,32 @@ export const siteConfig = {
   siteTitle: "ScaleView Studio | Website Redesigns That Convert",
   siteDescription:
     "Premium redesigns for service businesses. Fast, focused, and conversion ready without the agency bloat.",
-  ctaPrimaryLabel: "Book a strategy call",
+  ctaPrimaryLabel: "Book a call",
   ctaPrimaryHref: "https://example.com/book",
-  ctaSecondaryLabel: "See the proof",
+  ctaSecondaryLabel: "View work",
   ctaSecondaryHref: "#proof",
   contactEmail: "hello@scaleview.studio",
-  splashPalette: ["#4a58ff", "#ff6e48", "#5ad7ff"],
+  splashPalette: ["#7F5AF0", "#6B46E6", "#9A7BFF"],
   nav: {
-    ctaLabel: "Start a project",
+    ctaLabel: "Book a call",
+    links: [
+      { label: "Proof", href: "#proof" },
+      { label: "Gallery", href: "#gallery" },
+      { label: "Process", href: "#process" },
+      { label: "FAQ", href: "#faq" },
+    ],
   },
   hero: {
     headlineLines: ["Premium website", "redesigns that turn first visits into booked calls."],
+    accentWord: "booked",
     subhead:
       "We rebuild service business websites with strategic copy, refined UI, and measurable conversion lifts. No fluff, just confident results.",
     highlight: "Conversion focused. Brand elevated. Launch ready.",
-    bullets: ["Conversion focused UX", "Fast launch timeline", "Accessible and mobile ready"],
+    trust: [
+      { label: "Example lift", value: "+42% qualified leads" },
+      { label: "Example lift", value: "-36% bounce rate" },
+      { label: "Example lift", value: "+58% call requests" },
+    ],
   },
   proof: {
     title: "Proof of polish, not promises",
@@ -37,26 +48,32 @@ export const siteConfig = {
       {
         title: "Home Services",
         description: "Fast quotes, trusted teams, clear next steps.",
+        detail: "Ideal for multi-location or high volume inbound calls.",
       },
       {
         title: "Dental and Health",
         description: "Calm visuals, credibility, simple booking flows.",
+        detail: "Built to reduce anxiety and clarify insurance steps.",
       },
       {
         title: "Solar and Energy",
         description: "Confidence, savings proof, frictionless consults.",
+        detail: "Focus on proof points and clear eligibility logic.",
       },
       {
         title: "Legal",
         description: "Authority led pages with direct case intake.",
+        detail: "Clear practice areas and fast intake routing.",
       },
       {
         title: "Construction",
         description: "Portfolio first, precise service scoping.",
+        detail: "Showcases workmanship, scope, and timelines.",
       },
       {
         title: "Professional Services",
         description: "High trust messaging with conversion ready CTAs.",
+        detail: "Ideal for consult driven or retainer businesses.",
       },
     ],
   },
@@ -65,19 +82,19 @@ export const siteConfig = {
     steps: [
       {
         title: "Audit",
-        description: "We map friction, drop offs, and quick wins before design starts.",
+        description: "Audit brief, priority backlog, and quick win map.",
       },
       {
         title: "Design",
-        description: "High fidelity UI with brand polish and conversion first flow.",
+        description: "High fidelity UI, copy flow, and approval checkpoints.",
       },
       {
         title: "Build",
-        description: "Fast, accessible, and optimized for Core Web Vitals.",
+        description: "Responsive build, performance QA, and accessibility pass.",
       },
       {
         title: "Launch",
-        description: "QA, handoff, and a performance tune for day one impact.",
+        description: "QA checklist, handoff kit, and launch support.",
       },
     ],
   },
@@ -126,25 +143,27 @@ export const siteConfig = {
     title: "FAQ",
     items: [
       {
-        question: "How long does a redesign take?",
-        answer: "Most projects ship in 3 to 6 weeks depending on complexity and feedback speed.",
-      },
-      {
-        question: "Can you work with our existing brand?",
+        question: "What does pricing look like?",
         answer:
-          "Yes. We enhance what is working and elevate the presentation without losing recognition.",
+          "Most redesigns start in the 5k to 40k range based on scope. After the call we share a clear range and options.",
       },
       {
-        question: "Do you handle copy and messaging?",
-        answer: "We collaborate on positioning and refine copy so every section earns its space.",
+        question: "How long does a redesign take?",
+        answer: "Most projects ship in 3 to 6 weeks depending on scope and feedback speed.",
       },
       {
-        question: "What if we need ongoing updates?",
-        answer: "We can provide a handoff kit or a lightweight monthly retainer.",
+        question: "How do revisions work?",
+        answer:
+          "We run focused review rounds at each phase and lock decisions quickly to keep momentum.",
       },
       {
-        question: "Will the site be optimized for mobile?",
-        answer: "Yes. Mobile performance and clarity are part of the core build.",
+        question: "Who owns the final files and code?",
+        answer:
+          "You own the deliverables we create, and we provide the source files and handoff.",
+      },
+      {
+        question: "Do you offer ongoing support?",
+        answer: "Yes. We can provide a handoff kit or a lightweight monthly retainer.",
       },
       {
         question: "How do we start?",

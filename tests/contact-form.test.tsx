@@ -11,6 +11,7 @@ describe("ContactForm", () => {
 
     expect(await screen.findByText("Name is required")).toBeInTheDocument();
     expect(await screen.findByText("Enter a valid email")).toBeInTheDocument();
+    expect(await screen.findByText("Tell us a bit more")).toBeInTheDocument();
   });
 
   it("blocks honeypot submissions on the client", async () => {
@@ -19,8 +20,6 @@ describe("ContactForm", () => {
 
     await user.type(screen.getByLabelText("Name"), "Jordan Smith");
     await user.type(screen.getByLabelText("Email"), "jordan@example.com");
-    await user.type(screen.getByLabelText("Company"), "Example Co");
-    await user.selectOptions(screen.getByLabelText("Budget range"), "10k-20k");
     await user.type(screen.getByLabelText("Project goals"), "We need a premium redesign.");
 
     const honeypot = document.querySelector("input[name='website']") as HTMLInputElement;

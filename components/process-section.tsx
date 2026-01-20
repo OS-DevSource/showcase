@@ -1,6 +1,7 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
 import { Reveal, RevealItem } from "@/components/reveal";
 import { siteConfig } from "@/lib/site-config";
 
@@ -17,19 +18,13 @@ export function ProcessSection() {
         <Reveal className="mt-10 grid gap-4 md:grid-cols-2">
           {siteConfig.process.steps.map((step, index) => (
             <RevealItem key={step.title}>
-              <div className="group relative isolate h-full overflow-hidden rounded-[var(--radius-md)]">
-                <div
-                  aria-hidden="true"
-                  className="gradient-border pointer-events-none absolute inset-0 rounded-[var(--radius-md)]"
-                />
-                <div className="bg-card relative z-10 m-px h-full rounded-[var(--radius-md)] p-6">
-                  <p className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
-                    Step {index + 1}
-                  </p>
-                  <h3 className="text-foreground mt-2 text-lg font-semibold">{step.title}</h3>
-                  <p className="text-muted-foreground mt-2 text-sm">{step.description}</p>
-                </div>
-              </div>
+              <Card className="p-6">
+                <p className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
+                  Step {index + 1}
+                </p>
+                <h3 className="text-foreground mt-2 text-lg font-semibold">{step.title}</h3>
+                <p className="text-muted-foreground mt-2 text-sm">{step.description}</p>
+              </Card>
             </RevealItem>
           ))}
         </Reveal>

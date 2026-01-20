@@ -16,12 +16,16 @@ export function FinalCtaSection() {
             <p className="text-muted-foreground mt-3">{siteConfig.finalCta.description}</p>
           </div>
           <Button asChild size="lg" className="w-fit">
-            <a href={siteConfig.ctaPrimaryHref} target="_blank" rel="noreferrer">
+            <a href={siteConfig.ctaPrimaryHref} target="_blank" rel="noopener noreferrer">
               {siteConfig.ctaPrimaryLabel}
             </a>
           </Button>
+          <p className="text-muted-foreground text-xs">We reply within 2 business days.</p>
           <p className="text-muted-foreground text-xs">
-            Prefer email? Reach us at {siteConfig.contactEmail}
+            Prefer email? Reach us at{" "}
+            <a className="text-primary hover:text-primary/80" href={`mailto:${siteConfig.contactEmail}`}>
+              {siteConfig.contactEmail}
+            </a>
           </p>
         </div>
         <div className="border-border bg-card rounded-[var(--radius-md)] border p-6">
