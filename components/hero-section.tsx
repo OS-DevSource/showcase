@@ -23,12 +23,12 @@ export function HeroSection() {
         <div className="noise-layer absolute inset-0" />
         <div className="vignette-layer absolute inset-0 hidden dark:block" />
       </div>
-      <div className="relative mx-auto flex max-w-6xl flex-col gap-8 px-6 pt-24 pb-16 sm:pt-28 sm:pb-20 md:pt-32 md:pb-24">
+      <div className="relative mx-auto flex max-w-6xl flex-col gap-6 px-6 pt-20 pb-12 sm:gap-8 sm:pt-28 sm:pb-20 md:pt-32 md:pb-24">
         <Badge className="border-foreground/10 text-foreground/70 w-fit">
           {siteConfig.hero.highlight}
         </Badge>
         <div className="flex flex-col gap-5">
-          <h1 className="text-foreground font-[var(--font-display)] font-semibold text-balance text-3xl leading-[1.12] sm:text-4xl md:text-6xl">
+          <h1 className="text-foreground text-3xl leading-[1.12] font-[var(--font-display)] font-semibold text-balance sm:text-4xl md:text-6xl">
             <span className="block overflow-hidden">
               <motion.span
                 initial={reduceMotion ? false : { y: 120 }}
@@ -73,12 +73,12 @@ export function HeroSection() {
           </motion.p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-          <Button size="lg" className="h-11 px-5 text-sm sm:h-12 sm:px-6 sm:text-base" asChild>
+          <Button size="lg" asChild>
             <a href={siteConfig.ctaPrimaryHref} target="_blank" rel="noopener noreferrer">
               {siteConfig.ctaPrimaryLabel}
             </a>
           </Button>
-          <Button variant="secondary" size="lg" className="h-11 px-5 text-sm sm:h-12 sm:px-6 sm:text-base" asChild>
+          <Button variant="secondary" size="lg" asChild>
             <Link href={siteConfig.ctaSecondaryHref}>{siteConfig.ctaSecondaryLabel}</Link>
           </Button>
         </div>

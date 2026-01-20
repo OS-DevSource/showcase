@@ -35,11 +35,7 @@ export function TopNav() {
           <div className="flex items-center justify-end gap-2 sm:gap-3">
             <ThemeToggle />
             <Button asChild size="sm" className="h-9 px-3 text-sm sm:h-10 sm:px-4">
-              <a
-                href={siteConfig.ctaPrimaryHref}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href={siteConfig.ctaPrimaryHref} target="_blank" rel="noopener noreferrer">
                 {siteConfig.nav.ctaLabel}
               </a>
             </Button>

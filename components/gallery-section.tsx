@@ -29,7 +29,7 @@ function GalleryTile({
       aria-controls={contentId}
       onClick={() => setOpen((value) => !value)}
       className={cn(
-        "focus-ring group border-border bg-card relative flex h-44 w-full flex-col justify-between overflow-hidden rounded-[var(--radius-md)] border p-5 text-left transition",
+        "focus-ring group border-border bg-card relative flex h-auto w-full flex-col justify-start overflow-hidden rounded-[var(--radius-md)] border p-4 text-left transition sm:h-44 sm:p-5",
         "hover:border-primary/40 hover:-translate-y-1 hover:shadow-[var(--shadow-soft)]",
         "dark:hover:border-primary/60"
       )}
@@ -51,7 +51,7 @@ function GalleryTile({
           </div>
         )}
       </div>
-      <span className="text-muted-foreground relative z-10 mt-6 text-xs font-semibold tracking-wide uppercase">
+      <span className="text-muted-foreground relative z-10 mt-3 hidden text-xs font-semibold tracking-wide uppercase sm:inline sm:mt-6">
         {hint}
       </span>
       <div

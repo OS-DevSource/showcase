@@ -18,11 +18,13 @@ export function ProcessSection() {
         <Reveal className="mt-10 grid gap-4 md:grid-cols-2">
           {siteConfig.process.steps.map((step, index) => (
             <RevealItem key={step.title}>
-              <Card className="p-6">
+              <Card className="p-4 sm:p-6">
                 <p className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
                   Step {index + 1}
                 </p>
-                <h3 className="text-foreground mt-2 text-lg font-semibold">{step.title}</h3>
+                <h3 className="text-foreground mt-2 text-base font-semibold sm:text-lg">
+                  {step.title}
+                </h3>
                 <p className="text-muted-foreground mt-2 text-sm">{step.description}</p>
               </Card>
             </RevealItem>
