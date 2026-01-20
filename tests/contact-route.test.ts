@@ -10,6 +10,34 @@ const basePayload = {
 };
 
 describe("POST /api/contact", () => {
+  const originalResendKey = process.env.RESEND_API_KEY;
+  const originalPostmarkToken = process.env.POSTMARK_API_TOKEN;
+  const originalContactFrom = process.env.CONTACT_FROM;
+
+  beforeEach(() => {
+    delete process.env.RESEND_API_KEY;
+    delete process.env.POSTMARK_API_TOKEN;
+    delete process.env.CONTACT_FROM;
+  });
+
+  afterEach(() => {
+    if (originalResendKey) {
+      process.env.RESEND_API_KEY = originalResendKey;
+    } else {
+      delete process.env.RESEND_API_KEY;
+    }
+    if (originalPostmarkToken) {
+      process.env.POSTMARK_API_TOKEN = originalPostmarkToken;
+    } else {
+      delete process.env.POSTMARK_API_TOKEN;
+    }
+    if (originalContactFrom) {
+      process.env.CONTACT_FROM = originalContactFrom;
+    } else {
+      delete process.env.CONTACT_FROM;
+    }
+  });
+
   it("blocks honeypot submissions on the server", async () => {
     const request = new Request("http://localhost/api/contact", {
       method: "POST",
@@ -24,7 +52,7 @@ describe("POST /api/contact", () => {
     expect(data.ok).toBe(false);
   });
 
-  it("returns demo mode when no endpoint is configured", async () => {
+  it("returns demo mode when no provider is configured in non-production", async () => {
     const request = new Request("http://localhost/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

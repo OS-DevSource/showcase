@@ -37,6 +37,7 @@ export function HeroSection() {
         <div className="blob blob-one" />
         <div className="blob blob-two" />
         {showCanvas && !reduceMotion && <AmbientCanvas />}
+        <div className="grid-layer absolute inset-0" />
         <div className="noise-layer absolute inset-0" />
         <div className="vignette-layer absolute inset-0 hidden dark:block" />
       </div>
