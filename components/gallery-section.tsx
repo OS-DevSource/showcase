@@ -7,12 +7,20 @@ import { siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 import { useTouchDevice } from "@/lib/use-touch-device";
 
-function GalleryTile({ title, description }: { title: string; description: string }) {
+function GalleryTile({
+  title,
+  description,
+  detail,
+}: {
+  title: string;
+  description: string;
+  detail?: string;
+}) {
   const isTouch = useTouchDevice();
   const [open, setOpen] = useState(false);
   const contentId = useId();
   const expanded = open;
-  const hint = isTouch ? "Tap for details" : "Hover for details";
+  const hint = isTouch ? "Tap for more detail" : "Hover for more detail";
 
   return (
     <button
@@ -22,28 +30,37 @@ function GalleryTile({ title, description }: { title: string; description: strin
       onClick={() => setOpen((value) => !value)}
       className={cn(
         "focus-ring group border-border bg-card relative flex h-44 w-full flex-col justify-between overflow-hidden rounded-[var(--radius-md)] border p-5 text-left transition",
-        "hover:border-accent/35 hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(12,14,24,0.12)]",
-        "dark:hover:border-border/80 dark:hover:shadow-[var(--shadow-soft)]"
+        "hover:border-primary/40 hover:-translate-y-1 hover:shadow-[var(--shadow-soft)]",
+        "dark:hover:border-primary/60"
       )}
       data-open={expanded}
     >
       <div className="relative z-10">
         <p className="text-foreground text-sm font-semibold">{title}</p>
-        <div
-          id={contentId}
-          className={cn(
-            "text-muted-foreground mt-2 text-sm transition-opacity",
-            expanded ? "opacity-100" : isTouch ? "opacity-0" : "opacity-0 group-hover:opacity-100"
-          )}
-        >
+        <div id={contentId} className="text-muted-foreground mt-2 text-sm">
           {description}
         </div>
+        {detail && (
+          <div
+            className={cn(
+              "text-muted-foreground mt-2 text-xs transition-opacity",
+              expanded ? "opacity-100" : isTouch ? "opacity-0" : "opacity-0 group-hover:opacity-100"
+            )}
+          >
+            {detail}
+          </div>
+        )}
       </div>
       <span className="text-muted-foreground relative z-10 mt-6 text-xs font-semibold tracking-wide uppercase">
         {hint}
       </span>
-      <div className="absolute inset-0 opacity-0 transition group-hover:opacity-100">
-        <div className="absolute inset-0 bg-[radial-gradient(120%_120%_at_20%_0%,rgb(var(--accent)_/_0.18)_0%,transparent_65%)] dark:bg-gradient-to-br dark:from-[rgba(74,88,255,0.12)] dark:via-transparent dark:to-[rgba(255,110,72,0.18)]" />
+      <div
+        className={cn(
+          "absolute inset-0 opacity-0 transition",
+          expanded ? "opacity-100" : "group-hover:opacity-100"
+        )}
+      >
+        <div className="bg-primary/10 absolute inset-0" />
       </div>
     </button>
   );
@@ -64,7 +81,7 @@ export function GallerySection() {
         <Reveal className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {siteConfig.gallery.items.map((item) => (
             <RevealItem key={item.title}>
-              <GalleryTile title={item.title} description={item.description} />
+              <GalleryTile title={item.title} description={item.description} detail={item.detail} />
             </RevealItem>
           ))}
         </Reveal>

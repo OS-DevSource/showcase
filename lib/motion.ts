@@ -1,10 +1,10 @@
 import { Variants } from "framer-motion";
 
 export const MOTION_EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
-export const MOTION_DURATION = 0.65;
-export const MOTION_DURATION_LONG = 0.85;
-export const MOTION_STAGGER = 0.12;
-export const MOTION_DELAY = 0.08;
+export const MOTION_DURATION = 0.24;
+export const MOTION_DURATION_LONG = 0.3;
+export const MOTION_STAGGER = 0.08;
+export const MOTION_DELAY = 0.06;
 export const revealViewport = { once: true, amount: 0.2 };
 
 export const fadeUp: Variants = {
@@ -31,6 +31,6 @@ export const scaleIn: Variants = {
   show: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.55, ease: MOTION_EASE },
+    transition: { duration: 0.3, ease: MOTION_EASE },
   },
 };

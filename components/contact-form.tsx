@@ -12,8 +12,6 @@ import { MOTION_DURATION, MOTION_EASE } from "@/lib/motion";
 const initialState: ContactPayload = {
   name: "",
   email: "",
-  company: "",
-  budget: "",
   message: "",
   website: "",
 };
@@ -110,7 +108,7 @@ export function ContactForm() {
             placeholder="Your name"
           />
           {errors.name && (
-            <p id="name-error" className="text-xs text-red-500" role="alert">
+            <p id="name-error" className="text-destructive text-xs" role="alert">
               {errors.name}
             </p>
           )}
@@ -128,60 +126,8 @@ export function ContactForm() {
             placeholder="you@company.com"
           />
           {errors.email && (
-            <p id="email-error" className="text-xs text-red-500" role="alert">
+            <p id="email-error" className="text-destructive text-xs" role="alert">
               {errors.email}
-            </p>
-          )}
-        </div>
-      </div>
-      <div className="grid gap-4 md:grid-cols-2">
-        <div className="space-y-2">
-          <Label htmlFor="company">Company</Label>
-          <Input
-            id="company"
-            name="company"
-            value={formState.company}
-            onChange={(event) => updateField("company", event.target.value)}
-            aria-invalid={Boolean(errors.company)}
-            aria-describedby={errors.company ? "company-error" : undefined}
-            placeholder="Business name"
-          />
-          {errors.company && (
-            <p id="company-error" className="text-xs text-red-500" role="alert">
-              {errors.company}
-            </p>
-          )}
-        </div>
-        <div className="space-y-2">
-          <Label htmlFor="budget">Budget range</Label>
-          <select
-            id="budget"
-            name="budget"
-            value={formState.budget}
-            onChange={(event) => updateField("budget", event.target.value)}
-            aria-invalid={Boolean(errors.budget)}
-            aria-describedby={errors.budget ? "budget-error" : undefined}
-            className="focus-ring border-border bg-popover text-popover-foreground h-12 w-full rounded-[var(--radius-sm)] border px-4 text-sm"
-          >
-            <option value="" className="bg-popover text-popover-foreground">
-              Select a range
-            </option>
-            <option value="5k-10k" className="bg-popover text-popover-foreground">
-              5k to 10k
-            </option>
-            <option value="10k-20k" className="bg-popover text-popover-foreground">
-              10k to 20k
-            </option>
-            <option value="20k-40k" className="bg-popover text-popover-foreground">
-              20k to 40k
-            </option>
-            <option value="40k+" className="bg-popover text-popover-foreground">
-              40k+
-            </option>
-          </select>
-          {errors.budget && (
-            <p id="budget-error" className="text-xs text-red-500" role="alert">
-              {errors.budget}
             </p>
           )}
         </div>
@@ -198,7 +144,7 @@ export function ContactForm() {
           placeholder="Tell us what you want to improve"
         />
         {errors.message && (
-          <p id="message-error" className="text-xs text-red-500" role="alert">
+          <p id="message-error" className="text-destructive text-xs" role="alert">
             {errors.message}
           </p>
         )}
@@ -221,7 +167,7 @@ export function ContactForm() {
         <p className="text-muted-foreground text-xs">We reply within 2 business days.</p>
       </div>
       {errors.website && (
-        <p className="text-xs text-red-500" role="alert">
+        <p className="text-destructive text-xs" role="alert">
           {errors.website}
         </p>
       )}
@@ -233,7 +179,7 @@ export function ContactForm() {
           className={`rounded-[var(--radius-sm)] border px-4 py-3 text-sm ${
             toast.type === "success"
               ? "border-emerald-400/30 bg-emerald-400/10 text-emerald-500"
-              : "border-red-500/30 bg-red-500/10 text-red-400"
+              : "border-destructive/30 bg-destructive/10 text-destructive"
           }`}
           aria-live="polite"
         >

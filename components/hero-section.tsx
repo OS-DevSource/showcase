@@ -1,42 +1,25 @@
 "use client";
-
-import dynamic from "next/dynamic";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MOTION_DELAY, MOTION_DURATION, MOTION_DURATION_LONG, MOTION_EASE } from "@/lib/motion";
 import { siteConfig } from "@/lib/site-config";
-import { useCursorGlow } from "@/lib/cursor-glow";
-import { useTouchDevice } from "@/lib/use-touch-device";
-
-const AmbientCanvas = dynamic(
-  () => import("@/components/ambient-canvas").then((mod) => mod.AmbientCanvas),
-  {
-    ssr: false,
-  }
-);
 
 export function HeroSection() {
   const reduceMotion = useReducedMotion();
-  const isTouch = useTouchDevice();
-  const [showCanvas, setShowCanvas] = useState(false);
-
-  useEffect(() => {
-    if (reduceMotion) return;
-    const frame = requestAnimationFrame(() => setShowCanvas(true));
-    return () => cancelAnimationFrame(frame);
-  }, [reduceMotion]);
-
-  useCursorGlow(!reduceMotion && !isTouch);
+  const accentWord = siteConfig.hero.accentWord;
+  const lineTwo = siteConfig.hero.headlineLines[1];
+  const accentParts = useMemo(() => {
+    if (!accentWord || !lineTwo.includes(accentWord)) return null;
+    const [before, after] = lineTwo.split(accentWord);
+    return { before, after };
+  }, [accentWord, lineTwo]);
 
   return (
     <section className="relative isolate overflow-hidden">
       <div className="glow-field pointer-events-none absolute inset-0 -z-10">
-        <div className="blob blob-one" />
-        <div className="blob blob-two" />
-        {showCanvas && !reduceMotion && <AmbientCanvas />}
         <div className="noise-layer absolute inset-0" />
         <div className="vignette-layer absolute inset-0 hidden dark:block" />
       </div>
@@ -67,8 +50,16 @@ export function HeroSection() {
                 }}
                 className="relative inline-block"
               >
-                {siteConfig.hero.headlineLines[1]}
-                <span className="animated-gradient absolute -bottom-2 left-0 h-2 w-full rounded-full opacity-70" />
+                {accentParts ? (
+                  <>
+                    {accentParts.before}
+                    <span className="text-primary">{accentWord}</span>
+                    {accentParts.after}
+                  </>
+                ) : (
+                  siteConfig.hero.headlineLines[1]
+                )}
+                <span className="bg-primary/70 absolute -bottom-2 left-0 h-1.5 w-full rounded-full opacity-70" />
               </motion.span>
             </span>
           </h1>
@@ -83,7 +74,7 @@ export function HeroSection() {
         </div>
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
           <Button size="lg" asChild>
-            <a href={siteConfig.ctaPrimaryHref} target="_blank" rel="noreferrer">
+            <a href={siteConfig.ctaPrimaryHref} target="_blank" rel="noopener noreferrer">
               {siteConfig.ctaPrimaryLabel}
             </a>
           </Button>
@@ -92,12 +83,15 @@ export function HeroSection() {
           </Button>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
-          {siteConfig.hero.bullets.map((item) => (
+          {siteConfig.hero.trust.map((item) => (
             <div
-              key={item}
-              className="border-border bg-card text-foreground/80 rounded-[var(--radius-sm)] border px-4 py-3 text-sm font-semibold"
+              key={item.value}
+              className="border-border bg-card rounded-[var(--radius-sm)] border px-4 py-3"
             >
-              {item}
+              <p className="text-foreground text-base font-semibold">{item.value}</p>
+              <p className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
+                {item.label}
+              </p>
             </div>
           ))}
         </div>
