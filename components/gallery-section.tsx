@@ -51,7 +51,7 @@ function GalleryTile({
           </div>
         )}
       </div>
-      <span className="text-muted-foreground relative z-10 mt-3 hidden text-xs font-semibold tracking-wide uppercase sm:inline sm:mt-6">
+      <span className="text-muted-foreground relative z-10 mt-3 hidden text-xs font-semibold tracking-wide uppercase sm:mt-6 sm:inline">
         {hint}
       </span>
       <div
