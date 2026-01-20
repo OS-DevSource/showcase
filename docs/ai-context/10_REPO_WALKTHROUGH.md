@@ -202,6 +202,7 @@ Tests are written with Vitest and React Testing Library.
   - Theme toggling, persistence, and initial state behavior.
 
 Test setup is in `vitest.setup.ts`, which:
+
 - Mocks matchMedia, ResizeObserver, and requestAnimationFrame.
 - Mocks next/image and next/link for DOM testing.
 - Provides a stub for IntersectionObserver.

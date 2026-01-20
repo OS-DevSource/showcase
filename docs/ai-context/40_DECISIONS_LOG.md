@@ -1,6 +1,7 @@
 # Decisions Log
 
 Format
+
 - YYYY-MM-DD: Decision
   - Why:
   - Notes:
