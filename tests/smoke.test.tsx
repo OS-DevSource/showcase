@@ -5,7 +5,7 @@ import Home from "@/app/page";
 describe("Home page", () => {
   it("renders major sections", () => {
     render(<Home />);
-    expect(screen.getByText("ScaleView Studio")).toBeInTheDocument();
+    expect(screen.getByText("Obsidian Studio")).toBeInTheDocument();
     expect(screen.getByText("Proof of polish, not promises")).toBeInTheDocument();
     expect(screen.getByText("Designed to feel tailored in any industry")).toBeInTheDocument();
     expect(screen.getByText("A clear process built for momentum")).toBeInTheDocument();

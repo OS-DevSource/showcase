@@ -9,8 +9,10 @@ const manrope = Manrope({
   variable: "--font-sans",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://obsidian-studio.vercel.app";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("http://localhost:3000"),
+  metadataBase: new URL(siteUrl),
   title: siteConfig.siteTitle,
   description: siteConfig.siteDescription,
   keywords: [
@@ -24,7 +26,7 @@ export const metadata: Metadata = {
     title: siteConfig.siteTitle,
     description: siteConfig.siteDescription,
     type: "website",
-    url: "http://localhost:3000",
+    url: siteUrl,
     images: [
       {
         url: "/og.png",

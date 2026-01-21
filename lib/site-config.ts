@@ -1,13 +1,13 @@
 export const siteConfig = {
-  brandName: "ScaleView Studio",
-  siteTitle: "ScaleView Studio | Website Redesigns That Convert",
+  brandName: "Obsidian Studio",
+  siteTitle: "Obsidian Studio | Websites for local businesses",
   siteDescription:
-    "Premium redesigns for service businesses. Fast, focused, and conversion ready without the agency bloat.",
+    "Websites for local businesses built to turn visits into calls and bookings.",
   ctaPrimaryLabel: "Book a call",
-  ctaPrimaryHref: "https://example.com/book",
+  ctaPrimaryHref: "#contact",
   ctaSecondaryLabel: "View work",
   ctaSecondaryHref: "#proof",
-  contactEmail: "hello@scaleview.studio",
+  contactEmail: "os.devsource@gmail.com",
   splashPalette: ["#7F5AF0", "#6B46E6", "#9A7BFF"],
   nav: {
     ctaLabel: "Book a call",
