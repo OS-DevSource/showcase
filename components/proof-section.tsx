@@ -18,8 +18,8 @@ export function ProofSection() {
   return (
     <section id="proof" className="section-padding">
       <div className="relative mx-auto max-w-6xl px-6">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr,1.1fr] lg:items-start">
-          <div className={cn("flex flex-col gap-6", stickyEnabled ? "sticky-shell" : "")}>
+        <div className="grid gap-6 sm:gap-8 md:gap-10 lg:grid-cols-[0.9fr,1.1fr] lg:items-start">
+          <div className={cn("flex flex-col gap-4 sm:gap-6", stickyEnabled ? "sticky-shell" : "")}>
             <Badge className="w-fit">Proof</Badge>
             <div>
               <h2 className="text-3xl font-[var(--font-display)] font-semibold md:text-4xl">
@@ -41,7 +41,7 @@ export function ProofSection() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-4 sm:gap-6 md:gap-8">
             <BeforeAfterSlider beforeSrc="/before.png" afterSrc="/after.png" />
             <Reveal className="grid gap-4 md:grid-cols-3">
               {siteConfig.caseStudies.map((study) => (
@@ -52,7 +52,7 @@ export function ProofSection() {
                         <CardTitle>{study.title}</CardTitle>
                         <p className="text-muted-foreground text-sm">Problem: {study.problem}</p>
                       </CardHeader>
-                      <CardContent className="text-muted-foreground space-y-3 text-sm">
+                      <CardContent className="text-muted-foreground space-y-2 text-[13px] sm:space-y-3 sm:text-sm">
                         <p>Fix: {study.fix}</p>
                         <p className="text-foreground font-semibold">{study.result}</p>
                       </CardContent>

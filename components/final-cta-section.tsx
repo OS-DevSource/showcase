@@ -6,7 +6,7 @@ import { siteConfig } from "@/lib/site-config";
 export function FinalCtaSection() {
   return (
     <section id="contact" className="section-padding">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[0.9fr,1.1fr]">
+      <div className="mx-auto grid max-w-6xl gap-8 px-6 md:gap-10 lg:grid-cols-[0.9fr,1.1fr]">
         <div className="flex flex-col gap-6">
           <Badge className="w-fit">Start</Badge>
           <div>
@@ -31,7 +31,7 @@ export function FinalCtaSection() {
             </a>
           </p>
         </div>
-        <div className="border-border bg-card rounded-[var(--radius-md)] border p-6">
+        <div className="border-border bg-card rounded-[var(--radius-md)] border p-4 sm:p-6">
           <ContactForm />
         </div>
       </div>
