@@ -1,8 +1,7 @@
 export const siteConfig = {
   brandName: "Obsidian Studio",
   siteTitle: "Obsidian Studio | Websites for local businesses",
-  siteDescription:
-    "Websites for local businesses built to turn visits into calls and bookings.",
+  siteDescription: "Websites for local businesses built to turn visits into calls and bookings.",
   ctaPrimaryLabel: "Book a call",
   ctaPrimaryHref: "#contact",
   ctaSecondaryLabel: "View work",
